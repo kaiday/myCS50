@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> Scoreboard</title>
+        <style>
+            table{
+                border: 2px solid black;
+                border-collapse: collapse;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+
+            td{
+                border: 2px solid black;
+            }
+
+            #addscore1{
+                background-color: red;
+                border: 1px dashed;
+            }
+
+            #addscore2{
+                background-color: cyan;
+                border: 1px dashed;
+            }
+
+            .title{
+                background-color: light-gray;
+            }
+
+            .centered{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="centered"> Duke vs. UNC Basketball Game</h1>
+        <main>
+            <table>
+                <p class="centered">Click the button to add a point to a team</p>
+                <tr>
+                    <td class="title">Team 1</td>
+                    <td class="title">Team 2</td>
+                </tr>
+                <tr>
+                    <td id="score1">0</td>
+                    <td id="score2">0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <button id="addscore1">+1</button>
+                    </td>
+                    <td>
+                        <button id="addscore2">+1</button>
+                    </td>
+                </tr>
+            </table>
+            <script>
+                let team1 = 0;
+                let team2 = 0;
+                document.querySelector('#addscore1').onclick = function() {
+                    team1 = team1 + 1;
+                    document.querySelector('#score1').innerHTML = team1;
+                }
+
+                document.querySelector('#addscore2').onclick = function() {
+                    team2 = team2 + 1;
+                    document.querySelector('#score2').innerHTML = team2;
+                }
+            </script>
+        </main>
+    </body>
+
+</html>
